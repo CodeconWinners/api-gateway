@@ -1,5 +1,5 @@
 import express from "express";
-import {createProxyMiddleware} from "http-proxy-middleware";
+import {createProxyMiddleware, proxyEventsPlugin} from "http-proxy-middleware";
 
 const app = express();
 
@@ -11,7 +11,7 @@ app.use('/desabafa-dev', createProxyMiddleware({
     pathRewrite: {
         '^/desabafa-dev': '', // Remove o prefixo da URL
     },
-    on: proxyEvents,
+    on: proxyEventsPlugin,
     logger: console
 }));
 
