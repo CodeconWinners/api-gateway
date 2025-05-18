@@ -1,7 +1,10 @@
 import express from "express";
+import cors from "cors";
 import {createProxyMiddleware, proxyEventsPlugin} from "http-proxy-middleware";
 
 const app = express();
+
+app.use(cors());
 
 
 app.use('/desabafa-dev', createProxyMiddleware({
