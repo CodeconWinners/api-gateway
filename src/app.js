@@ -8,7 +8,6 @@ app.use(cors());
 
 
 app.use('/desabafa-dev', createProxyMiddleware({
-    method: 'GET',
     target: "http://desabafa-dev-2.us-east-1.elasticbeanstalk.com",
     changeOrigin: true,
     pathRewrite: {
